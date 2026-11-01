@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACULEATUS | Genshin Impact Piloting</title>
+    <!-- Font Awesome (İkonlar için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="chlogo.png">
+</head>
+<body>
+
+    <div class="container">
+<!-- Dil Değiştirme Butonu -->
+<div class="lang-switch-container" style="text-align: right; margin-bottom: 10px;">
+    <button onclick="setLanguage('tr', this)" class="lang-btn">TR</button>
+    <span style="opacity: 0.3; color: #fff;">|</span>
+    <button onclick="setLanguage('en', this)" class="lang-btn active">EN</button>
+</div>
+
+<!-- ONE, TWO, THREE NAVIGATION -->
+<section class="carrd-header-box" style="display: flex; align-items: center; justify-content: space-between; max-width: 520px; margin: 0 auto; height: 160px;">
+    
+    <!-- Sol Taraf: Metinler -->
+    <div style="text-align: left; padding-left: 35px; z-index: 2;">
+        <h2 style="font-size: 2.1em; line-height: 1.25; letter-spacing: 0.5px; margin: 0; font-weight: 600;">
+            <span class="main-page-btn" onclick="openMainPage('one', event)">one.</span> 
+            <span class="main-page-btn" onclick="openMainPage('two', event)">two.</span> 
+            <span class="main-page-btn" onclick="openMainPage('three', event)">three.</span>
+        </h2>
+    </div>
+
+    <!-- Sağ Taraf: Karakter Görseli -->
+    <div style="height: 100%; display: flex; align-items: flex-end;">
+        <img src="bookcho.png" alt="Character" style="height: 100%; width: auto; object-fit: cover; display: block;">
+    </div>
+
+</section>
+
+<!-- PAGE ONE: ABOUT / HOME CARD -->
+<div id="page-one" class="main-page-content" style="display: none;">
+    <section class="card nav-section" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px;">
+        <!-- Sol Taraf: Başlık ve Metinler (TR & EN Destekלי - Ortalanmış) -->
+        <div class="profile-text-content" style="text-align: center; flex: 1;">
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <h2 style="font-size: 1.7rem; font-weight: bold; margin-bottom: 8px; ">-,`ACULEATUS</h2>
+                <p style="font-size: 0.95rem; opacity: 0.95; margin-bottom: 8px; font-weight: 500; line-height: 1.4;">
+                    Selam~♪ ben Aculeatus! Harita keşfi, wish biriktirme ve güvenli hesap pilotluğunda yanındayım.
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.6; letter-spacing: 0.5px;">hızlı • güvenilir • profesyonel</p>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <h2 style="font-size: 1.7rem; font-weight: bold; margin-bottom: 8px;    ">-,`ACULEATUS</h2>
+                <p style="font-size: 0.95rem; opacity: 0.95; margin-bottom: 8px; font-weight: 500; line-height: 1.4;">
+                    Hi~♪ I'm Aculeatus! Helping you with exploration, wish farming & safe account piloting.
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.6; letter-spacing: 0.5px;">fast • trusted • reliable</p>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Chongyun Görseli -->
+        <div class="profile-img-container" style="flex: 0 0 auto;">
+            <img src="chydrink.png" alt="Chongyun" style="max-width: 220px; width: 100%; height: auto; display: block; border-radius: 12px;">
+        </div>
+    </section>
+
+    <!-- En Alt: Yan Yana Sosyal Medya Butonları -->
+    <div class="social-links-row" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+        <a href="https://www.tiktok.com/@acule4tus" target="_blank" class="sub-tab-btn" style="text-decoration: none;"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="https://x.com/acule4tus" target="_blank" class="sub-tab-btn" style="text-decoration: none;"><i class="fa-brands fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com/acule4tus/" target="_blank" class="sub-tab-btn" style="text-decoration: none;"><i class="fa-brands fa-instagram"></i> Instagram</a>
+    </div>
+</div>
+<!-- PAGE TWO: TERMS & CONDITIONS -->
+<div id="page-two" class="main-page-content" style="display: none;">
+    <section class="card terms-section">
+        
+        <!-- TÜRKÇE MODU -->
+        <div class="lang-tr" style="display: none;">
+            <h2 style="margin-bottom: 20px;">HİZMET ŞARTLARI <span>VE</span> KOŞULLARI</h2>
+            <ul class="terms-list" style="text-align: left; padding-left: 20px;">
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Ödeme ve İade Koşulları</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Yeni müşteriler için işlem öncesi %100 peşin ödeme alınır. Daimi müşteriler %50 ön ödeme yapabilir, kalan %50'lik kısmı ise hizmetin yarısı tamamlandıktan sonra ödeyebilir.</p>
+                        <p style="margin: 0;">• İşlem başladıktan sonra iade yapılmaz. Eğer ben tamamlayamazsam, yapılmayan kısmın ücreti iade edilir. Siz iptal ederseniz, yalnızca henüz yapılmamış olan kısmın ücreti iade edilir.</p>
+                    </div>
+                    <div style="margin-top: 12px; padding: 10px 12px; background: rgba(98, 182, 203, 0.08); border-left: 3px solid #62B6CB; border-radius: 4px;">
+    <span style="color: #62B6CB; font-weight: bold; display: inline-block; margin-bottom: 4px;">✦ Ödeme Yöntemleri</span>
+    <div style="font-size: 0.9em; opacity: 0.9;">IBAN / Papara</div>
+</div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Süre ve Acele Siparişler</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Acele/acil siparişler tercih edilmemektedir; ancak belirlenmiş bir teslim tarihiniz varsa lütfen önceden bilgilendirin.</p>
+                        <p style="margin: 0;">• Son dakika veya acil talepler %20 ek ücrete tabidir. Bunun dışındaki teslimat süreleri talebe bağlı olarak birkaç gün ile birkaç hafta arasında değişebilir. Her zaman olabildiğince hızlı çalışmaktayım. (˶ᵔ ᵕ ᵔ˶)</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Harita Keşfi ve Fiyat Düzenlemeleri</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Fiyatlar her zaman pazarlığa açıktır ve hesabınızın mevcut durumuna göre ayarlanır.</p>
+                        <p style="margin-bottom: 6px;">• Keşif hizmetleri, istenen bölgeler oyun içi haritada %100'e ulaştığında tamamlanmış sayılır (ekstra istenmediği sürece gizli kalmış ögeler garanti edilmez).</p>
+                        <p style="margin: 0;">• Kilitli bölgeleri açmak için gereken öncül görevler (Archon veya Kabile görevleri gibi) öncesinde yapılmış olmalı ya da yapılması için konuşulmalıdır.</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Güvenlik ve Gizlilik</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• %100 el emeği: Hiçbir şekilde hile, makro, oto-tıklayıcı veya üçüncü taraf yazılımlar kullanmam. Her işlem tamamen el emeğiyle yapılır.</p>
+                        <p style="margin-bottom: 6px;">• Güvenlik gerekçesiyle lütfen hizmet öncesinde ve sonrasında şifrenizi değiştirin.</p>
+                        <p style="margin: 0;">• İletişim kanalımızdaki mesajlar işlem kanıtı olarak saklanacaktır. Ben çalışırken lütfen haber vermeden hesaba giriş yapmayın.</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 15px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Genel Kurallar</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Lütfen iletişimde saygılı ve nazik olun. Hesabınızın güvende olduğundan emin olabilirsiniz!</p>
+                        <p style="margin-bottom: 6px;">• Siparişleri ve talepleri reddetme hakkım saklıdır.</p>
+                        <p style="margin: 0;">• Listede yer almayan herhangi bir hizmet için mesaj atmaktan çekinmeyin. Hizmet sonrasında yorum (vouch) bırakmanız her zaman çok makbule geçer! ૮ ྀིᴗ͈ . ᴗ͈ ྀིა</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- İNGİLİZCE MODU -->
+        <div class="lang-en">
+            <h2 style="margin-bottom: 20px;">TERMS <span>AND</span> CONDITIONS</h2>
+            <ul class="terms-list" style="text-align: left; padding-left: 20px;">
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Payments & Refunds</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Full payment upfront for new clients. Returning clients can pay 50% upfront, and the remaining 50% after half of the service is completed.</p>
+                        <p style="margin: 0;">• No refunds once service starts. If I can't finish, unfinished work is refunded. If you cancel, only the remaining work will be refunded.</p>
+                    </div>
+                    <div style="margin-top: 12px; padding: 10px 12px; background: rgba(98, 182, 203, 0.08); border-left: 3px solid #62B6CB; border-radius: 4px;">
+    <span style="color: #62B6CB; font-weight: bold; display: inline-block; margin-bottom: 4px;">✦ Payment Methods:</span>
+    <div style="font-size: 0.9em; opacity: 0.9;">Payoneer / G2G</div>
+</div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Deadlines & Rush Orders</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• I prefer no rush commissions, but please inform me of any deadlines beforehand if you have one.</p>
+                        <p style="margin: 0;">• Last-minute or explicit rush requests carry a +20% extra fee. Otherwise, turnaround times will range from days to weeks depending on the request. I always work as fast as I can. (˶ᵔ ᵕ ᵔ˶)</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Exploration & Pricing Adjustments</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Prices are always negotiable and adjusted based on your account's current progress.</p>
+                        <p style="margin-bottom: 6px;">• Exploration commissions are considered complete once requested areas reach 100% on the in-game map (hidden items not guaranteed unless requested).</p>
+                        <p style="margin: 0;">• Locked areas requiring prerequisite quests (like Archon or Tribal quests) must be unlocked beforehand or discussed for completion.</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 22px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">Safety & Security</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• 100% manual labor: I don't use any cheats, hacks, autoclickers, or third-party software. Everything is done strictly by hand.</p>
+                        <p style="margin-bottom: 6px;">• Please change your password before and after the service for security reasons.</p>
+                        <p style="margin: 0;">• Our communication channel will be used as proof for the transaction. Please don't log into the account while I'm working without informing me first.</p>
+                    </div>
+                </li>
+                
+                <li style="margin-bottom: 15px;">
+                    <strong style="font-size: 1rem; color: #fff; display: block; margin-bottom: 6px;">General Conduct</strong>
+                    <div style="font-size: 0.88rem; opacity: 0.85; line-height: 1.6; padding-left: 5px;">
+                        <p style="margin-bottom: 6px;">• Please be respectful and polite. Rest assured, your account is in safe hands!</p>
+                        <p style="margin-bottom: 6px;">• I reserve the right to decline any request.</p>
+                        <p style="margin: 0;">• Feel free to DM me about any service not listed here. Vouchers/reviews after the service are always appreciated! ૮ ྀིᴗ͈ . ᴗ͈ ྀིა</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+</div>
+
+        <!-- TAB CONTENT SECTION -->
+        <main class="card content-section" style="display: none;">
+
+        <!-- PAGE THREE: PRICELIST & ALL TABS -->
+        <div id="page-three" class="main-page-content" style="display: none;">
+<!-- PRICE LIST CATEGORY BUTTONS -->
+            <div style="margin-bottom: 25px; text-align: center;">
+                <h2 style="font-size: 1.5em; margin-bottom: 15px;">
+                    <span class="lang-tr" style="display: none;"><span style="color: #62c4cf;">FİYAT</span> LİSTESİ</span>
+                    <span class="lang-en"><span>PRICE</span> LIST</span>
+                </h2>
+                <div class="nav-buttons">
+                    <button class="tab-btn active" onclick="openTab('maintenance')">
+                        <span class="lang-tr" style="display: none;">Bakım</span>
+                        <span class="lang-en">Maintenance</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab('quests')">
+                        <span class="lang-tr" style="display: none;">Görevler</span>
+                        <span class="lang-en">Quests</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab('exploration')">
+                        <span class="lang-tr" style="display: none;">Keşif</span>
+                        <span class="lang-en">Exploration</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab('building')">
+                        <span class="lang-tr" style="display: none;">Karakter Geliştirme</span>
+                        <span class="lang-en">Character Building</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab('endgame')">
+                        <span class="lang-tr" style="display: none;">Oyun Sonu</span>
+                        <span class="lang-en">Endgame</span>
+                    </button>
+                    <button class="tab-btn" onclick="openTab('extras')">
+                        <span class="lang-tr" style="display: none;">Ekstralar</span>
+                        <span class="lang-en">Extras</span>
+                    </button>
+                </div>
+            </div>
+
+            </div>   
+                     
+<!-- MAINTENANCE TAB -->
+            <div id="maintenance" class="tab-content active">
+                
+                <!-- TÜRKÇE İÇERİK -->
+                <div class="lang-tr" style="display: none;">
+                    <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Bakım Paketleri</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Paket</th>
+                                    <th>Fiyat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Günlük Bakım</td>
+                                    <td>10 TL</td>
+                                </tr>
+                                <tr>
+                                    <td>Haftalık Bakım</td>
+                                    <td>50 TL</td>
+                                </tr>
+                                <tr>
+                                    <td>Aylık Bakım</td>
+                                    <td>300 TL</td>
+                                </tr>
+                                <tr>
+                                    <td>Yama Etkinlikleri</td>
+                                    <td>50 TL – 400 TL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- İNGİLİZCE İÇERİK -->
+                <div class="lang-en">
+                    <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Maintenance Packs</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pack</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Daily Maintenance</td>
+                                    <td>$0.20</td>
+                                </tr>
+                                <tr>
+                                    <td>Weekly Maintenance</td>
+                                    <td>$1.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Maintenance</td>
+                                    <td>$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Patch Events</td>
+                                    <td>$1.00 – $8.50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            
+<!-- QUESTS TAB -->
+<div id="quests" class="tab-content" style="width: 100%;">
+
+    <!-- ANA QUEST SEÇENEKLERİ -->
+    <div id="quests-main-menu" style="display: block; animation: fadeIn 0.4s ease;">
+        
+        <!-- TÜRKÇE BUTONLAR -->
+        <div class="lang-tr" style="display: none;">
+            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+                <button class="quest-main-btn" onclick="openQuestCategory('archon')">Hükümdar Görevleri</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('interlude')">Ara Bölüm Görevleri</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('special')">Özel Görevler</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('world')">Dünya Görevleri</button>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE BUTONLAR -->
+        <div class="lang-en">
+            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+                <button class="quest-main-btn" onclick="openQuestCategory('archon')">Archon Quests</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('interlude')">Interlude Chapter</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('special')">Special Quests</button>
+                <button class="quest-main-btn" onclick="openQuestCategory('world')">World Quests</button>
+            </div>
+        </div>
+
+    </div>
+    
+<!-- 1. ARCHON İÇERİĞİ -->
+    <div id="cat-archon" class="quest-category-content" style="display: none;">
+        
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← görevler menüsüne dön</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Hükümdar Görevleri <small style="font-size: 0.8em; opacity: 0.8;">(sahne başına)</small></h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bölge</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mondstadt</td><td>150 TL</td></tr>
+                        <tr><td>Liyue</td><td>200 TL</td></tr>
+                        <tr><td>Inazuma</td><td>250 TL</td></tr>
+                        <tr><td>Sumeru</td><td>300 TL</td></tr>
+                        <tr><td>Fontaine</td><td>300 TL</td></tr>
+                        <tr><td>Natlan</td><td>300 TL</td></tr>
+                        <tr><td>Nod-Krai</td><td>350 TL</td></tr>
+                        <tr><td>Snezhnaya</td><td>350 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← back to quests menu</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Archon Quests <small style="font-size: 0.8em; opacity: 0.8;">(per act)</small></h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mondstadt</td><td>$3.00</td></tr>
+                        <tr><td>Liyue</td><td>$4.00</td></tr>
+                        <tr><td>Inazuma</td><td>$5.00</td></tr>
+                        <tr><td>Sumeru</td><td>$6.00</td></tr>
+                        <tr><td>Fontaine</td><td>$6.00</td></tr>
+                        <tr><td>Natlan</td><td>$6.00</td></tr>
+                        <tr><td>Nod-Krai</td><td>$7.00</td></tr>
+                        <tr><td>Snezhnaya</td><td>$7.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+<!-- 2. INTERLUDE İÇERİĞİ -->
+    <div id="cat-interlude" class="quest-category-content" style="display: none;">
+        
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← görevler menüsüne dön</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Ara Bölüm Görevleri</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ara Bölüm</th>
+                            <th>Sahne</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Rüzgara Kulak Veren Turna</td><td>Sahne I</td><td>200 TL</td></tr>
+                        <tr><td>Tehlikeli Yol</td><td>Sahne II</td><td>250 TL</td></tr>
+                        <tr><td>Ters Dönen Başlangıç</td><td>Sahne III</td><td>250 TL</td></tr>
+                        <tr><td>Yanılgı</td><td>Sahne IV</td><td>350 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← back to quests menu</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Interlude Chapter</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Interlude</th>
+                            <th>Act</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>The Crane Returns on the Wind</td><td>Act I</td><td>$4.00</td></tr>
+                        <tr><td>Perilous Trail</td><td>Act II</td><td>$5.00</td></tr>
+                        <tr><td>Inversion of Genesis</td><td>Act III</td><td>$5.00</td></tr>
+                        <tr><td>Paralogism</td><td>Act IV</td><td>$7.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+<!-- 3. SPECIAL İÇERİĞİ -->
+    <div id="cat-special" class="quest-category-content" style="display: none;">
+        
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← görevler menüsüne dön</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Özel Görevler</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Görev Türü</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hikaye Görevleri <small style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(sahne başına)</small></td>
+                            <td>100 TL – 350 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Arkadaşlık Etkinlikleri <small style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(etkinlik başına)</small></td>
+                            <td>60 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Kabile Günlükleri</td>
+                            <td>100 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Buluşma Noktaları</td>
+                            <td>60 TL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← back to quests menu</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Special Quests</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Story Quests <small style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(per act)</small></td>
+                            <td>$2.00 – $7.00</td>
+                        </tr>
+                        <tr>
+                            <td>Hangout Events <small style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(per hangout)</small></td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr>
+                            <td>Tribal Chronicles</td>
+                            <td>$2.00</td>
+                        </tr>
+                        <tr>
+                            <td>Meeting Points</td>
+                            <td>$1.25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    
+<!-- 4. WORLD QUESTS İÇERİĞİ -->
+    <div id="cat-world" class="quest-category-content" style="display: none;">
+        
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← görevler menüsüne dön</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">Dünya Görevleri</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tahmini Süre</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>&lt; 30 dakika</td><td>25 TL</td></tr>
+                        <tr><td>~ 1 saat</td><td>75 TL</td></tr>
+                        <tr><td>~ 2 saat</td><td>100 TL</td></tr>
+                        <tr><td>&gt; 3 saat</td><td>200 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div style="max-width: 400px; margin: 0 auto 15px auto;">
+                <button onclick="backToQuestsMenu()" style="width: 100%; background: transparent; border: 2px solid var(--border-color, #1f354e); color: #fff; padding: 10px 15px; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-weight: bold;">← back to quests menu</button>
+            </div>
+            <h3 style="text-align: left; margin-bottom: 15px; border-left: 4px solid #62c4cf; padding-left: 10px;">World Quests</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estimated Time</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>&lt; 30 minutes</td><td>$0.50</td></tr>
+                        <tr><td>~ 1 hour</td><td>$1.50</td></tr>
+                        <tr><td>~ 2 hours</td><td>$2.00</td></tr>
+                        <tr><td>&gt; 3 hours</td><td>$4.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+<!-- Bölge Seçim Kutucukları -->
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 25px 0 15px 0; justify-content: center;">
+            <button class="quest-wq-btn active" onclick="openWqRegion(event, 'wq-mondstadt')">Mondstadt</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-liyue')">Liyue</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-inazuma')">Inazuma</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-sumeru')">Sumeru</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-fontaine')">Fontaine</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-natlan')">Natlan</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-nodkrai')">Nod-Krai</button>
+            <button class="quest-wq-btn" onclick="openWqRegion(event, 'wq-snezhnaya')">Snezhnaya</button>
+        </div>
+
+<!-- Mondstadt -->
+        <div id="wq-mondstadt" class="wq-content" style="display: block;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Zaman ve Rüzgar</td><td>150 TL</td></tr>
+                            <tr><td>Dağlarda</td><td>200 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Time and Wind</td><td>$3.00</td></tr>
+                            <tr><td>In the Mountains</td><td>$4.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Liyue -->
+        <div id="wq-liyue" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Chenyu'nun Batık Yeşim Lütfu</td><td>150 TL</td></tr>
+                            <tr><td>Bin Yıllık Dağlar</td><td>200 TL</td></tr>
+                            <tr><td>Kanyonun Merkezine Yolculuk</td><td>200 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Chenyu's Blessings of Sunken Jade</td><td>$3.00</td></tr>
+                            <tr><td>The Millennial Mountains</td><td>$4.00</td></tr>
+                            <tr><td>The Chasm Delvers</td><td>$4.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Inazuma -->
+        <div id="wq-inazuma" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Kutsal Kiraz Ağacı Arınma Ayini</td><td>250 TL</td></tr>
+                            <tr><td>Orobashi'nin Mirası</td><td>150 TL</td></tr>
+                            <tr><td>Sislerin İçinden</td><td>300 TL</td></tr>
+                            <tr><td>Seirai Fırtına Avcıları</td><td>200 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Sacred Sakura Cleansing Ritual</td><td>$5.00</td></tr>
+                            <tr><td>Orobashi's Legacy</td><td>$3.00</td></tr>
+                            <tr><td>Through the Mists</td><td>$6.00</td></tr>
+                            <tr><td>Seirai Stormchasers</td><td>$4.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Sumeru -->
+        <div id="wq-sumeru" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Aranyaka<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(tüm görev)</small></td><td>600 TL</td></tr>
+                            <tr><td>Aranyaka + Kitap Tamamlama</td><td>750 TL</td></tr>
+                            <tr><td>Aranyaka<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(bölüm başına)</small></td><td>150 TL</td></tr>
+                            <tr><td>Altın Rüya</td><td>250 TL</td></tr>
+                            <tr><td>Çifte Kanıt</td><td>150 TL</td></tr>
+                            <tr><td>Eski Notlar ve Yeni Arkadaşlar</td><td>200 TL</td></tr>
+                            <tr><td>Bilqis'in Ağıdı</td><td>250 TL</td></tr>
+                            <tr><td>Khvarena'nın Fazileti</td><td>300 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Aranyaka<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(full quest)</small></td><td>$12.50</td></tr>
+                            <tr><td>Aranyaka + Book completion</td><td>$15.00</td></tr>
+                            <tr><td>Aranyaka<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(per part)</small></td><td>$3.00</td></tr>
+                            <tr><td>Golden Slumber</td><td>$5.00</td></tr>
+                            <tr><td>Dual Evidence</td><td>$3.00</td></tr>
+                            <tr><td>Old Notes and New Friends</td><td>$4.00</td></tr>
+                            <tr><td>The Dirge of Bilqis</td><td>$5.00</td></tr>
+                            <tr><td>Khvarena of Good and Evil</td><td>$6.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Fontaine -->
+        <div id="wq-fontaine" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Kadim Renkler</td><td>150 TL</td></tr>
+                            <tr><td>Yarım Kalan Komedi</td><td>200 TL</td></tr>
+                            <tr><td>Nergis Haçlı Ann</td><td>250 TL</td></tr>
+                            <tr><td>Narcissus'un Peşinde</td><td>250 TL</td></tr>
+                            <tr><td>Erinnyes'in Vahşi Perisi</td><td>150 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Ancient Colors</td><td>$3.00</td></tr>
+                            <tr><td>Unfinished Comedy</td><td>$4.00</td></tr>
+                            <tr><td>Ann of the Narzissenkreuz</td><td>$5.00</td></tr>
+                            <tr><td>In the Wake of Narcissus</td><td>$5.00</td></tr>
+                            <tr><td>The Wild Fairy of Erinnyes</td><td>$3.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Natlan -->
+        <div id="wq-natlan" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Yıkılan Şehrin Tarihçisi</td><td>250 TL</td></tr>
+                            <tr><td>Küller Diyarında Bir Kayıp Gezgin</td><td>150 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Chronicler of the Crumbling City</td><td>$5.00</td></tr>
+                            <tr><td>Lost Traveler in the Ashen Realm</td><td>$3.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        
+<!-- Nod-Krai -->
+        <div id="wq-nodkrai" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Bülbülün Şarkısı</td><td>200 TL</td></tr>
+                            <tr><td>Ayın Doğusu, Güneşin Batısı</td><td>150 TL</td></tr>
+                            <tr><td>Ayın Kehaneti Eşliğinde Polka</td><td>100 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Nightingale's Song</td><td>$4.00</td></tr>
+                            <tr><td>East of the Moon, West of the Sun</td><td>$3.00</td></tr>
+                            <tr><td>Polkka Beneath the Moon's Oracle</td><td>$2.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Snezhnaya -->
+        <div id="wq-snezhnaya" class="wq-content" style="display: none;">
+            
+            <!-- TÜRKÇE İÇERİK -->
+            <div class="lang-tr" style="display: none;">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Görev</th>
+                                <th>Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Sarayı Kar Fırtınasında Yıkılıyor</td><td>400 TL</td></tr>
+                            <tr><td>Buz Devi<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(3 bölüm)</small></td><td>100 TL</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İNGİLİZCE İÇERİK -->
+            <div class="lang-en">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quest</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Her Palace Collapses Into the Blizzard</td><td>$8.00</td></tr>
+                            <tr><td>Snow Giant<small style="font-size: 0.85em; opacity: 0.7; display: inline-block; margin-left: 5px; font-weight: normal;">(3 parts)</small></td><td>$2.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Tasarım ve Hover Efektleri -->
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.quest-category-content, .wq-content {
+    animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ana menü butonları */
+.quest-main-btn {
+    background: transparent;
+    border: 2px solid var(--border-color, #1f354e);
+    color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quest-main-btn:hover {
+    transform: scale(1.03);
+    border-color: #62B6CB;
+    background: rgba(98, 182, 203, 0.1);
+    box-shadow: 0 4px 15px rgba(98, 182, 203, 0.2);
+}
+
+/* World Quests bölge butonları */
+.wq-btn {
+    background: transparent;
+    border: 2px solid #c5a059;
+    color: #c5a059;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wq-btn:hover {
+    background: rgba(197, 160, 89, 0.15);
+    transform: translateY(-1px);
+}
+
+.wq-btn.active {
+    background: #c5a059;
+    color: #0B192C;
+    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
+}
+</style>
+
+<script>
+function openQuestCategory(category) {
+    document.getElementById('quests-main-menu').style.display = 'none';
+    let contents = document.getElementsByClassName('quest-category-content');
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    let target = document.getElementById('cat-' + category);
+    target.style.display = 'block';
+    target.style.animation = 'none';
+    target.offsetHeight; 
+    target.style.animation = 'fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+}
+
+function backToQuestsMenu() {
+    let contents = document.getElementsByClassName('quest-category-content');
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    let menu = document.getElementById('quests-main-menu');
+    if(menu) {
+        menu.style.display = 'block';
+        menu.style.animation = 'none';
+        menu.offsetHeight;
+        menu.style.animation = 'fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+}
+
+function openWqRegion(evt, regionId) {
+    let contents = document.getElementsByClassName("wq-content");
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+    }
+    let buttons = document.getElementsByClassName("quest-wq-btn");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+    let target = document.getElementById(regionId);
+    target.style.display = "block";
+    target.style.animation = 'none';
+    target.offsetHeight;
+    target.style.animation = 'fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+    
+    evt.currentTarget.classList.add("active");
+}
+
+
+// Menü sıfırlayıcı
+const questsTabElement = document.getElementById('quests');
+if (questsTabElement) {
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'style' || mutation.attributeName === 'class') {
+                // Eğer quests sekmesi görünür hale geldiyse (display block vb. durumlar)
+                const disp = window.getComputedStyle(questsTabElement).display;
+                if (disp !== 'none') {
+                    backToQuestsMenu();
+                }
+            }
+        });
+    });
+    observer.observe(questsTabElement, { attributes: true });
+}
+</script>
+
+
+<!-- EXPLORATION TAB -->
+<div id="exploration" class="tab-content" style="width: 100%;">
+    
+    <!-- YENİ 4'LÜ ANA MENÜ -->
+    <div id="exploration-main-menu" style="display: block; animation: fadeIn 0.4s ease;">
+        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto;">
+            <button class="expl-main-btn" onclick="openExplCategory('oculus')">
+                <span class="lang-tr" style="display: none;">Özler</span>
+                <span class="lang-en">Oculus</span>
+            </button>
+            <button class="expl-main-btn" onclick="openExplCategory('collectibles')">
+                <span class="lang-tr" style="display: none;">Toplanabilir Ögeler</span>
+                <span class="lang-en">Collectibles</span>
+            </button>
+            <button class="expl-main-btn" onclick="openExplCategory('regions-menu')">
+                <span class="lang-tr" style="display: none;">Bölgeler</span>
+                <span class="lang-en">Regions</span>
+            </button>
+            <button class="expl-main-btn" onclick="openExplCategory('fullpacks')">
+                <span class="lang-tr" style="display: none;">Tam Bölge Paketleri</span>
+                <span class="lang-en">Full Region Packs</span>
+            </button>
+        </div>
+    </div>
+
+<!-- REGIONS ALT MENÜSÜ -->
+    <div id="cat-regions-menu" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="backToExplMenu()" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← keşif menüsüne dön</span>
+                <span class="lang-en">← back to exploration menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Bölgeler</span>
+            <span class="lang-en">Regions</span>
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto;">
+            <button class="wq-btn" onclick="openExplCategory('mondstadt')">Mondstadt</button>
+            <button class="wq-btn" onclick="openExplCategory('dragonspine')">
+                <span class="lang-tr" style="display: none;">Ejdersırtı</span>
+                <span class="lang-en">Dragonspine</span>
+            </button>
+            <button class="wq-btn" onclick="openExplCategory('liyue')">Liyue</button>
+            <button class="wq-btn" onclick="openExplCategory('chasm')">
+                <span class="lang-tr" style="display: none;">Kanyon</span>
+                <span class="lang-en">The Chasm</span>
+            </button>
+            <button class="wq-btn" onclick="openExplCategory('inazuma')">Inazuma</button>
+            <button class="wq-btn" onclick="openExplCategory('enkanomiya')">Enkanomiya</button>
+            <button class="wq-btn" onclick="openExplCategory('sumeru')">Sumeru</button>
+            <button class="wq-btn" onclick="openExplCategory('fontaine')">Fontaine</button>
+            <button class="wq-btn" onclick="openExplCategory('natlan')">Natlan</button>
+            <button class="wq-btn" onclick="openExplCategory('nodkrai')">Nod-Krai</button>
+            <button class="wq-btn" onclick="openExplCategory('snezhnaya')">Snezhnaya</button>
+        </div>
+    </div>
+    
+<!-- 1. OCULUS İÇERİĞİ -->
+    <div id="cat-oculus" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="backToExplMenu()" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← keşif menüsüne dön</span>
+                <span class="lang-en">← back to exploration menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Özler</span>
+            <span class="lang-en">Oculus</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Özler</th>
+                            <th>Miktar</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Rüzgar Özü</td><td>66</td><td>100 TL</td></tr>
+                        <tr><td>Toprak Özü</td><td>131</td><td>120 TL</td></tr>
+                        <tr><td>Elektrik Özü</td><td>181</td><td>120 TL</td></tr>
+                        <tr><td>Doğa Özü</td><td>271</td><td>200 TL</td></tr>
+                        <tr><td>Su Özü</td><td>271</td><td>150 TL</td></tr>
+                        <tr><td>Ateş Özü</td><td>271</td><td>150 TL</td></tr>
+                        <tr><td>Ay Özü</td><td>271</td><td>150 TL</td></tr>
+                        <tr><td>Buz Özü</td><td>140</td><td>120 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Oculus</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Anemoculi</td><td>66</td><td>$2.00</td></tr>
+                        <tr><td>Geoculi</td><td>131</td><td>$2.50</td></tr>
+                        <tr><td>Electroculi</td><td>181</td><td>$2.50</td></tr>
+                        <tr><td>Dendroculi</td><td>271</td><td>$4.00</td></tr>
+                        <tr><td>Hydroculi</td><td>271</td><td>$3.00</td></tr>
+                        <tr><td>Pyroculi</td><td>271</td><td>$3.00</td></tr>
+                        <tr><td>Lunoculi</td><td>271</td><td>$3.00</td></tr>
+                        <tr><td>Cryoculi</td><td>140</td><td>$2.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 2. COLLECTIBLES İÇERİĞİ -->
+    <div id="cat-collectibles" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="backToExplMenu()" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← keşif menüsüne dön</span>
+                <span class="lang-en">← back to exploration menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Toplanabilir Ögeler</span>
+            <span class="lang-en">Collectibles</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Öge</th>
+                            <th>Miktar</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kızıl Akik</td><td>80</td><td>100 TL</td></tr>
+                        <tr><td>Lümen Kristali</td><td>80</td><td>100 TL</td></tr>
+                        <tr><td>Arındıran Işık Tüyü</td><td>36</td><td>80 TL</td></tr>
+                        <tr><td>Ruh Sazanı</td><td>50</td><td>100 TL</td></tr>
+                        <tr><td>Anahtar Mühürleri</td><td>59</td><td>100 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Collectible</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Crimson Agate</td><td>80</td><td>$2.00</td></tr>
+                        <tr><td>Lumenspar</td><td>80</td><td>$2.00</td></tr>
+                        <tr><td>Plumen of Purifying Light</td><td>36</td><td>$1.50</td></tr>
+                        <tr><td>Spirit Carp</td><td>50</td><td>$2.00</td></tr>
+                        <tr><td>Key Sigils</td><td>59</td><td>$2.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 3. MONDSTADT -->
+    <div id="cat-mondstadt" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Mondstadt</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Yıldızdüşen Vadisi</td><td>192 Sandık</td><td>140 TL</td></tr>
+                        <tr><td>Parlak Taç Dağları</td><td>128 Sandık</td><td>95 TL</td></tr>
+                        <tr><td>Rüzgar Feryadı Yaylası</td><td>104 Sandık</td><td>75 TL</td></tr>
+                        <tr><td>Uğultu Tepesi</td><td>86 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Rüzgartepe Zirvesi</td><td>60 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Uzay Tapınağı</td><td>163 Sandık</td><td>170 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Starfell Valley</td><td>192 Chests</td><td>$3.00</td></tr>
+                        <tr><td>Brightcrown Mountains</td><td>128 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Windwail Highland</td><td>104 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Galesong Hill</td><td>86 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Windrest Peak</td><td>60 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Temple of Space</td><td>163 Chests</td><td>$3.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 4. DRAGONSPINE -->
+    <div id="cat-dragonspine" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Ejdersırtı</span>
+            <span class="lang-en">Dragonspine</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ejdersırtı</td><td>234 Sandık</td><td>200 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Dragonspine</td><td>234 Chests</td><td>$4.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+<!-- 5. LIYUE -->
+    <div id="cat-liyue" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Liyue</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lisha</td><td>141 Sandık</td><td>80 TL</td></tr>
+                        <tr><td>Bulut Denizi</td><td>182 Sandık</td><td>90 TL</td></tr>
+                        <tr><td>Minlin</td><td>386 Sandık</td><td>240 TL</td></tr>
+                        <tr><td>Bishui Ovası</td><td>264 Sandık</td><td>110 TL</td></tr>
+                        <tr><td>Qiongji Haliçi</td><td>196 Sandık</td><td>80 TL</td></tr>
+                        <tr><td>Chenyu Vadisi: Yukarı Vadi</td><td>159 Sandık</td><td>85 TL</td></tr>
+                        <tr><td>Chenyu Vadisi: Güney Dağları</td><td>155 Sandık</td><td>85 TL</td></tr>
+                        <tr><td>Laixin Dağı</td><td>23 Sandık</td><td>45 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lisha</td><td>141 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Sea of Clouds</td><td>182 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Minlin</td><td>386 Chests</td><td>$5.00</td></tr>
+                        <tr><td>Bishui Plain</td><td>264 Chests</td><td>$2.25</td></tr>
+                        <tr><td>Qiongji Estuary</td><td>196 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Chenyu Vale: Upper Vale</td><td>159 Chests</td><td>$1.75</td></tr>
+                        <tr><td>Chenyu Vale: Southern Mountain</td><td>155 Chests</td><td>$1.75</td></tr>
+                        <tr><td>Mt. Laixin</td><td>23 Chests</td><td>$1.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 6. THE CHASM -->
+    <div id="cat-chasm" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Kanyon</span>
+            <span class="lang-en">The Chasm</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kanyon</td><td>82 Sandık</td><td>75 TL</td></tr>
+                        <tr><td>Kanyon: Yer Altı Madenleri</td><td>166 Sandık</td><td>170 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>The Chasm</td><td>82 Chests</td><td>$1.50</td></tr>
+                        <tr><td>The Chasm: Underground Mines</td><td>166 Chests</td><td>$3.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+<!-- 7. INAZUMA -->
+    <div id="cat-inazuma" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Inazuma</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Narukami Adası</td><td>149 Sandık</td><td>110 TL</td></tr>
+                        <tr><td>Kannazuka</td><td>121 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Yashiori Adası</td><td>88 Sandık</td><td>80 TL</td></tr>
+                        <tr><td>Watatsumi Adası</td><td>98 Sandık</td><td>85 TL</td></tr>
+                        <tr><td>Seirai Adası</td><td>107 Sandık</td><td>85 TL</td></tr>
+                        <tr><td>Tsurumi Adası</td><td>169 Sandık</td><td>140 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Narukami Island</td><td>149 Chests</td><td>$2.25</td></tr>
+                        <tr><td>Kannazuka</td><td>121 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Yashiori Island</td><td>88 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Watatsumi Island</td><td>98 Chests</td><td>$1.75</td></tr>
+                        <tr><td>Seirai Island</td><td>107 Chests</td><td>$1.75</td></tr>
+                        <tr><td>Tsurumi Island</td><td>169 Chests</td><td>$3.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 8. ENKANOMIYA -->
+    <div id="cat-enkanomiya" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Enkanomiya</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Enkanomiya</td><td>185 Sandık</td><td>190 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Enkanomiya</td><td>185 Chests</td><td>$4.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 9. SUMERU -->
+    <div id="cat-sumeru" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Sumeru</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ardravi Vadisi</td><td>90 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Ashavan Diyarı</td><td>110 Sandık</td><td>120 TL</td></tr>
+                        <tr><td>Avidya Ormanı</td><td>95 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Lokapala Ormanı</td><td>80 Sandık</td><td>85 TL</td></tr>
+                        <tr><td>Kayıp Fidelik &amp; Vanarana &amp; Vissudha Tarlası</td><td>190 Sandık</td><td>200 TL</td></tr>
+                        <tr><td>Aşağı Setekh Toprakları</td><td>100 Sandık</td><td>120 TL</td></tr>
+                        <tr><td>Yukarı Setekh Toprakları</td><td>60 Sandık</td><td>75 TL</td></tr>
+                        <tr><td>Hipostil Çölü</td><td>190 Sandık</td><td>260 TL</td></tr>
+                        <tr><td>Hadramaveth Çölü</td><td>290 Sandık</td><td>400 TL</td></tr>
+                        <tr><td>Gavireh Lajavard</td><td>120 Sandık</td><td>170 TL</td></tr>
+                        <tr><td>Farakhkert Krallığı</td><td>135 Sandık</td><td>170 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ardravi Valley</td><td>90 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Ashavan Realm</td><td>110 Chests</td><td>$2.50</td></tr>
+                        <tr><td>Avidya Forest</td><td>95 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Lokapala Jungle</td><td>80 Chests</td><td>$1.75</td></tr>
+                        <tr><td>Lost Nursery &amp; Vanarana &amp; Vissudha Field</td><td>190 Chests</td><td>$4.00</td></tr>
+                        <tr><td>Land of Lower Setekh</td><td>100 Chests</td><td>$2.50</td></tr>
+                        <tr><td>Land of Upper Setekh</td><td>60 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Hypostyle Desert</td><td>190 Chests</td><td>$5.50</td></tr>
+                        <tr><td>Desert of Hadramaveth</td><td>290 Chests</td><td>$8.50</td></tr>
+                        <tr><td>Gavireh Lajavard</td><td>120 Chests</td><td>$3.50</td></tr>
+                        <tr><td>Realm of Farakhkert</td><td>135 Chests</td><td>$3.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 10. FONTAINE -->
+    <div id="cat-fontaine" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Fontaine</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Beril Bölgesi</td><td>110 Sandık</td><td>140 TL</td></tr>
+                        <tr><td>Belleau Bölgesi</td><td>110 Sandık</td><td>45 TL</td></tr>
+                        <tr><td>Erinnyes Ormanı</td><td>97 Sandık</td><td>120 TL</td></tr>
+                        <tr><td>Morte Bölgesi</td><td>114 Sandık</td><td>160 TL</td></tr>
+                        <tr><td>Nostoi Bölgesi</td><td>35 Sandık</td><td>45 TL</td></tr>
+                        <tr><td>Kadim Çağlar Denizi</td><td>116 Sandık</td><td>120 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Beryl Region</td><td>110 Chests</td><td>$3.00</td></tr>
+                        <tr><td>Belleau Region</td><td>110 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Erinnyes Forest</td><td>97 Chests</td><td>$2.50</td></tr>
+                        <tr><td>Morte Region</td><td>114 Chests</td><td>$3.50</td></tr>
+                        <tr><td>Nostoi Region</td><td>35 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Sea of Bygone Eras</td><td>116 Chests</td><td>$2.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 11. NATLAN -->
+    <div id="cat-natlan" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Natlan</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sefa Yeli Tatil Köyü</td><td>171 Sandık</td><td>200 TL</td></tr>
+                        <tr><td>Kadim Kutsal Dağ</td><td>115 Sandık</td><td>150 TL</td></tr>
+                        <tr><td>Atocpan</td><td>112 Sandık</td><td>150 TL</td></tr>
+                        <tr><td>Ochkanatlan</td><td>100 Sandık</td><td>120 TL</td></tr>
+                        <tr><td>Tezcatepetonco Dağı</td><td>68 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Quahuacan Yamacı</td><td>41 Sandık</td><td>70 TL</td></tr>
+                        <tr><td>Coatepec Dağı</td><td>139 Sandık</td><td>150 TL</td></tr>
+                        <tr><td>Toyac Kaplıcaları</td><td>75 Sandık</td><td>70 TL</td></tr>
+                        <tr><td>Sonsuz Alev Havzası</td><td>77 Sandık</td><td>70 TL</td></tr>
+                        <tr><td>Tequemecan Vadisi</td><td>118 Sandık</td><td>120 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Easybreeze Holiday Resort</td><td>171 Chests</td><td>$4.00</td></tr>
+                        <tr><td>Ancient Sacred Mountain</td><td>115 Chests</td><td>$3.00</td></tr>
+                        <tr><td>Atocpan</td><td>112 Chests</td><td>$3.00</td></tr>
+                        <tr><td>Ochkanatlan</td><td>100 Chests</td><td>$2.50</td></tr>
+                        <tr><td>Tezcatepetonco Range</td><td>68 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Quahuacan Cliff</td><td>41 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Coatepec Mountain</td><td>139 Chests</td><td>$3.00</td></tr>
+                        <tr><td>Toyac Springs</td><td>75 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Basin of Unnumbered Flames</td><td>77 Chests</td><td>$1.50</td></tr>
+                        <tr><td>Tequemecan Valley</td><td>118 Chests</td><td>$2.50</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 12. NOD KRAI -->
+    <div id="cat-nodkrai" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Nod-Krai</span>
+            <span class="lang-en">Nod Krai</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Metcezir Denizi</td><td>36 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Ay Ovası</td><td>160 Sandık</td><td>200 TL</td></tr>
+                        <tr><td>Dunanna Çukuru</td><td>10 Sandık</td><td>10 TL</td></tr>
+                        <tr><td>Külduvak Zirvesi</td><td>51 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Dalgakapan Ovası</td><td>93 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Issız Deniz Tepesi</td><td>85 Sandık</td><td>60 TL</td></tr>
+                        <tr><td>Hiisi Adası</td><td>95 Sandık</td><td>100 TL</td></tr>
+                        <tr><td>Lempo Adası</td><td>180 Sandık</td><td>200 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Moontide Sea</td><td>36 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Lunar Highlands</td><td>160 Chests</td><td>$4.00</td></tr>
+                        <tr><td>Dunanna Pit</td><td>10 Chests</td><td>$0.20</td></tr>
+                        <tr><td>Ashveil Peak</td><td>51 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Wavechaser Plain</td><td>93 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Voidsea Outlook</td><td>85 Chests</td><td>$1.25</td></tr>
+                        <tr><td>Hiisi Island</td><td>95 Chests</td><td>$2.00</td></tr>
+                        <tr><td>Lempo Isle</td><td>180 Chests</td><td>$4.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- 13. SNEZHNAYA -->
+    <div id="cat-snezhnaya" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="openExplCategory('regions-menu')" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← bölgeler menüsüne dön</span>
+                <span class="lang-en">← back to regions menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">Snezhnaya</h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alt Bölge</th>
+                            <th>Sandık</th>
+                            <th>Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Beyaz Huş Kar Mezarı</td><td>42 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Alev Tüyü Vadisi</td><td>40 Sandık</td><td>50 TL</td></tr>
+                        <tr><td>Kara Ayaz Tepesi</td><td>97 Sandık</td><td>120 TL</td></tr>
+                        <tr><td>Ebedi Buz Diyarı</td><td>123 Sandık</td><td>170 TL</td></tr>
+                        <tr><td>Volkodlak Tundrası</td><td>51 Sandık</td><td>60 TL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subregion</th>
+                            <th>Chests</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>White Birch Snowgrave</td><td>42 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Flamefeather Valley</td><td>40 Chests</td><td>$1.00</td></tr>
+                        <tr><td>Fellfrost Peak</td><td>97 Chests</td><td>$2.50</td></tr>
+                        <tr><td>Everfrozen Earth</td><td>123 Chests</td><td>$3.50</td></tr>
+                        <tr><td>Volkodlak Tundra</td><td>51 Chests</td><td>$1.25</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+<!-- 14. FULL PACKS -->
+    <div id="cat-fullpacks" class="expl-category-content" style="display: none;">
+        <div style="max-width: 400px; margin: 0 auto 15px auto;">
+            <button onclick="backToExplMenu()" class="expl-back-btn">
+                <span class="lang-tr" style="display: none;">← keşif menüsüne dön</span>
+                <span class="lang-en">← back to exploration menu</span>
+            </button>
+        </div>
+        <h3 style="margin-bottom: 15px; text-align: left;">
+            <span class="lang-tr" style="display: none;">Tam Bölge Paketleri</span>
+            <span class="lang-en">Full Region Packs</span>
+        </h3>
+
+        <!-- TÜRKÇE İÇERİK -->
+        <div class="lang-tr" style="display: none;">
+            <div class="table-container">
+                <table class="full-packs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Paket</th>
+                            <th style="width: 45%; text-align: center;">Kapsam</th>
+                            <th style="width: 20%;">Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mondstadt &amp; Ejdersırtı Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 740+ Sandık</span>
+                                    <span>⤷ 66 Rüzgar Özü</span>
+                                    <span>⤷ 110 Kızıl Akik</span>
+                                </div>
+                            </td>
+                            <td>900 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Liyue + Kanyon + Chenyu Vadisi Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1.380+ Sandık</span>
+                                    <span>⤷ 131 Toprak Özü</span>
+                                    <span>⤷ 80 Lümen Kristali</span>
+                                </div>
+                            </td>
+                            <td>1.200 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Inazuma &amp; Enkanomiya Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 910+ Sandık</span>
+                                    <span>⤷ 181 Elektrik Özü</span>
+                                    <span>⤷ 59 Anahtar Mührü</span>
+                                </div>
+                            </td>
+                            <td>900 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Sumeru Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1.630+ Sandık</span>
+                                    <span>⤷ 271 Doğa Özü</span>
+                                    <span>⤷ 36 Arındıran Işık Tüyü</span>
+                                </div>
+                            </td>
+                            <td>2.000 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Fontaine Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 470+ Sandık</span>
+                                    <span>⤷ 271 Su Özü</span>
+                                </div>
+                            </td>
+                            <td>700 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Natlan Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1.040+ Sandık</span>
+                                    <span>⤷ 271 Ateş Özü</span>
+                                </div>
+                            </td>
+                            <td>1.000 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Nod-Krai Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 690+ Sandık</span>
+                                    <span>⤷ 271 Ay Özü</span>
+                                </div>
+                            </td>
+                            <td>900 TL</td>
+                        </tr>
+                        <tr>
+                            <td>Snezhnaya Tam Paketi</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 350+ Sandık</span>
+                                    <span>⤷ 140 Buz Özü</span>
+                                </div>
+                            </td>
+                            <td>550 TL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- İNGİLİZCE İÇERİK -->
+        <div class="lang-en">
+            <div class="table-container">
+                <table class="full-packs-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Package</th>
+                            <th style="width: 45%; text-align: center;">Scope</th>
+                            <th style="width: 20%;">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mondstadt &amp; Dragonspine Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 740+ Chests</span>
+                                    <span>⤷ 66 Anemoculi</span>
+                                    <span>⤷ 110 Crimson Agate</span>
+                                </div>
+                            </td>
+                            <td>$18.50</td>
+                        </tr>
+                        <tr>
+                            <td>Liyue + The Chasm + Chenyu Vale Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1,380+ Chests</span>
+                                    <span>⤷ 131 Geoculi</span>
+                                    <span>⤷ 80 Lumenspar</span>
+                                </div>
+                            </td>
+                            <td>$25.00</td>
+                        </tr>
+                        <tr>
+                            <td>Inazuma &amp; Enkanomiya Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 910+ Chests</span>
+                                    <span>⤷ 181 Electroculi</span>
+                                    <span>⤷ 59 Key Sigils</span>
+                                </div>
+                            </td>
+                            <td>$18.50</td>
+                        </tr>
+                        <tr>
+                            <td>Sumeru Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1,630+ Chests</span>
+                                    <span>⤷ 271 Dendroculi</span>
+                                    <span>⤷ 36 Plumes</span>
+                                </div>
+                            </td>
+                            <td>$41.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fontaine Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 470+ Chests</span>
+                                    <span>⤷ 271 Hydroculi</span>
+                                </div>
+                            </td>
+                            <td>$14.50</td>
+                        </tr>
+                        <tr>
+                            <td>Natlan Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 1,040+ Chests</span>
+                                    <span>⤷ 271 Pyroculi</span>
+                                </div>
+                            </td>
+                            <td>$20.50</td>
+                        </tr>
+                        <tr>
+                            <td>Nod-Krai Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 690+ Chests</span>
+                                    <span>⤷ 271 Lunoculi</span>
+                                </div>
+                            </td>
+                            <td>$18.50</td>
+                        </tr>
+                        <tr>
+                            <td>Snezhnaya Full Package</td>
+                            <td class="scope-cell">
+                                <div class="scope-content">
+                                    <span>⤷ 350+ Chests</span>
+                                    <span>⤷ 140 Cryoculi</span>
+                                </div>
+                            </td>
+                            <td>$11.50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- /exploration tab kapanışı -->
+
+<!-- Stil Tanımlamaları -->
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.expl-category-content {
+    animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ana menü butonları */
+.expl-main-btn {
+    background: transparent !important;
+    border: 2px solid var(--border-color, #1f354e) !important;
+    color: #fff !important;
+    padding: 12px 15px !important;
+    border-radius: 30px !important;
+    cursor: pointer !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.expl-main-btn:hover {
+    transform: scale(1.02) !important;
+    border-color: #62B6CB !important;
+    background: rgba(98, 182, 203, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(98, 182, 203, 0.2) !important;
+}
+
+/* Geri dön tuşları */
+.expl-back-btn {
+    background: transparent !important;
+    border: 2px solid var(--border-color, #1f354e) !important;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.expl-back-btn:hover {
+    transform: scale(1.02) !important;
+    border-color: #62B6CB !important;
+    background: rgba(98, 182, 203, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(98, 182, 203, 0.2) !important;
+}
+
+/* Regions için bölge butonları */
+.wq-btn {
+    background: transparent !important;
+    border: 2px solid #c5a559 !important;
+    color: #c5a559 !important;
+    padding: 10px 15px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.wq-btn:hover {
+    background: rgba(197, 165, 89, 0.15) !important;
+    transform: translateY(-1px) !important;
+    color: #fff !important;
+}
+</style>
+
+<script>
+function openExplCategory(category) {
+    document.getElementById('exploration-main-menu').style.display = 'none';
+    let contents = document.getElementsByClassName('expl-category-content');
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    let target = document.getElementById('cat-' + category);
+    if(target) {
+        target.style.display = 'block';
+        target.style.animation = 'none';
+        target.offsetHeight; 
+        target.style.animation = 'fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+}
+
+function backToExplMenu() {
+    let contents = document.getElementsByClassName('expl-category-content');
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+    let menu = document.getElementById('exploration-main-menu');
+    if(menu) {
+        menu.style.display = 'block';
+        menu.style.animation = 'none';
+        menu.offsetHeight;
+        menu.style.animation = 'fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+}
+
+const explorationTabElement = document.getElementById('exploration');
+if (explorationTabElement) {
+    const explObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'style' || mutation.attributeName === 'class') {
+                const disp = window.getComputedStyle(explorationTabElement).display;
+                if (disp !== 'none') {
+                    backToExplMenu();
+                }
+            }
+        });
+    });
+    explObserver.observe(explorationTabElement, { attributes: true });
+}
+</script>
+
+<!-- CHARACTER BUILDING TAB -->
+        <div id="building" class="tab-content" style="display: none;">
+            
+            <!-- Türkçe İçerik -->
+            <div class="lang-tr" style="display: none;">
+                <h3 class="mt-4">Karakter Geliştirme</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 72%;">Hizmet</th>
+                                <th style="width: 28%;">Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Karakter Geliştirme <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Seçilen 1 karakter için eser ve silah kasılması dahil tam geliştirme)</span></td>
+                                <td>300 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Boss Materyalleri <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Karakter yükseltmesi için gereken miktarın kasılması)</span></td>
+                                <td>120 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Bölge Özel Ürünleri <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(50 - 80 adet)</span></td>
+                                <td>60 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Bölge Özel Ürünleri <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(168 adet)</span></td>
+                                <td>100 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Düşman Düşenleri <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Belirli düşman materyali kasılması)</span></td>
+                                <td>100 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-4">Balıkçılık</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 72%;">Silah / Öğe</th>
+                                <th style="width: 28%;">Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Yakalayan Mızrak (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Temel silahın elde edilmesi)</span></td>
+                                <td>400 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Yakalayan Mızrak (Aşama Atlama) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Her aşama için)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Yolun Sonu (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Temel silahın elde edilmesi)</span></td>
+                                <td>400 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Yolun Sonu (Aşama Atlama) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Her aşama için)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Cendre Nehri Kayıkçısı (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Temel silahın elde edilmesi)</span></td>
+                                <td>400 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Cendre Nehri Kayıkçısı (Aşama Atlama) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Her aşama için)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İngilizce İçerik -->
+            <div class="lang-en">
+                <h3 class="mt-4">Character Building</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 58%;">Service</th>
+                                <th style="width: 14%;">TL</th>
+                                <th style="width: 14%;">USD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Character Build <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Full build including artifact and weapon farming for 1 selected character)</span></td>
+                                <td>300 TL</td>
+                                <td>$6.00</td>
+                            </tr>
+                            <tr>
+                                <td>Boss Materials <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Farming required amount for character ascension)</span></td>
+                                <td>120 TL</td>
+                                <td>$2.50</td>
+                            </tr>
+                            <tr>
+                                <td>Local Specialties  <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(50 - 80 pcs)</span></td>
+                                <td>60 TL</td>
+                                <td>$1.25</td>
+                            </tr>
+                            <tr>
+                                <td>Local Specialties <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(168 pcs)</span></td>
+                                <td>100 TL</td>
+                                <td>$2.00</td>
+                            </tr>
+                            <tr>
+                                <td>Enemy Drops <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Specific enemy material farming)</span></td>
+                                <td>100 TL</td>
+                                <td>$2.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-4">Fishing</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 58%;">Weapon / Item</th>
+                                <th style="width: 14%;">TL</th>
+                                <th style="width: 14%;">USD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>The Catch (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Obtaining the base weapon)</span></td>
+                                <td>400 TL</td>
+                                <td>$8.00</td>
+                            </tr>
+                            <tr>
+                                <td>The Catch (Refinement) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per refinement)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>End of the Line (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Obtaining the base weapon)</span></td>
+                                <td>400 TL</td>
+                                <td>$8.00</td>
+                            </tr>
+                            <tr>
+                                <td>End of the Line (Refinement) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per refinement)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Fleuve Cendre Ferryman (R1) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Obtaining the base weapon)</span></td>
+                                <td>400 TL</td>
+                                <td>$8.00</td>
+                            </tr>
+                            <tr>
+                                <td>Fleuve Cendre Ferryman (Refinement) <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per refinement)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+<!-- END GAME TAB -->
+        <div id="endgame" class="tab-content" style="display: none;">
+            
+            <!-- Türkçe İçerik -->
+            <div class="lang-tr" style="display: none;">
+                <h3 class="mt-4">Oyun Sonu</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 72%;">Hizmet</th>
+                                <th style="width: 28%;">Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hiçlik Sarmalı <small>(Kat 1-8)</small></td>
+                                <td>100 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Hiçlik Sarmalı <small>(Kat 9-10)</small></td>
+                                <td>150 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Hiçlik Sarmalı <small>(Kat 11)</small></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Hiçlik Sarmalı <small>(Kat 12)</small></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Kasvetli Taarruz <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Aşama başına)</span></td>
+                                <td>50 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Hayal Dünyası Tiyatrosu <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Perde tamamlama başına)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-4">Yerel Efsaneler</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 72%;">Hizmet</th>
+                                <th style="width: 28%;">Fiyat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Liyue Yerel Efsanesi <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Efsane başına)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Fontaine Yerel Efsanesi <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Efsane başına)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Natlan Yerel Efsanesi <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Başarım başına)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                            <tr>
+                                <td>Cesur Günlük <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Görev hedefleri başına)</span></td>
+                                <td>200 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- İngilizce İçerik -->
+            <div class="lang-en">
+                <h3 class="mt-4">Endgame</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 58%;">Service</th>
+                                <th style="width: 14%;">TL</th>
+                                <th style="width: 14%;">USD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Spiral Abyss <small>(Floor 1-8)</small></td>
+                                <td>100 TL</td>
+                                <td>$2.00</td>
+                            </tr>
+                            <tr>
+                                <td>Spiral Abyss <small>(Floor 9-10)</small></td>
+                                <td>150 TL</td>
+                                <td>$2.50</td>
+                            </tr>
+                            <tr>
+                                <td>Spiral Abyss <small>(Floor 11)</small></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Spiral Abyss <small>(Floor 12)</small></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Stygian Onslaught <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per stage)</span></td>
+                                <td>50 TL</td>
+                                <td>$1.00</td>
+                            </tr>
+                            <tr>
+                                <td>Imaginarium Theater <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per act completion)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-4">Local Legends</h3>
+                <div class="table-container">
+                    <table class="full-packs-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 58%;">Service</th>
+                                <th style="width: 14%;">TL</th>
+                                <th style="width: 14%;">USD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Liyue Local Legend <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per legend)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Fontaine Local Legend <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per legend)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Natlan Local Legend <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per achievement)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                            <tr>
+                                <td>Valiant Chronicle <span style="font-size: 0.85em; opacity: 0.7; display: block; font-weight: normal;">(Per objective)</span></td>
+                                <td>200 TL</td>
+                                <td>$4.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EXTRAS TAB CONTENT -->
+<div id="extras" class="tab-content" style="display: none;">
+    
+    <!-- TÜRKÇE İÇERİK -->
+    <div class="lang-tr" style="display: none;">
+        <h3 style="text-align: left; margin-bottom: 15px; color: #BEE9E8; border-left: 4px solid #5FA8D3; padding-left: 10px;">Ekstra Hizmetler</h3>
+        
+        <div style="display: flex; gap: 15px;">
+            
+            <!-- Achievements Box (TR) -->
+            <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 18px; border-radius: 12px; text-align: left; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <strong style="color: #5FA8D3; font-size: 1.05rem; display: block; margin-bottom: 10px;">Başarımlar</strong>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">Başarımları açmak için yardıma mı ihtiyacınız var?</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">TCG'den Elemental Specialist'e kadar her kategoriyi yapabilirim!</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">Fiyatlar hedeflediğiniz başarımlara ve hesabınızın mevcut durumuna bağlı olarak <strong>50 TL ile 750 TL</strong> arasında değişmektedir.</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0;">Özel bir fiyat teklifi için bana DM atabilirsiniz!⋆⭒˚.⋆</p>
+            </div>
+
+            <!-- Pulls Box (TR) -->
+            <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 18px; border-radius: 12px; text-align: left; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <strong style="color: #5FA8D3; font-size: 1.05rem; display: block; margin-bottom: 10px;">Dilek / Pull Kasımı</strong>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 8px 0;">Ekstra pull mu lazım? Hesabınızdaki mevcut kaynaklardan doğrudan sizin için dilek kasabilirim!⋆ ˚｡⋆୨୧˚</p>
+                <ul style="margin: 0; padding-left: 16px; font-size: 0.83rem; opacity: 0.88; line-height: 1.6;">
+                    <li>Standart: Her 10 pull için <strong>250 TL</strong></li>
+                    <li>Acil Sipariş: Her 10 pull için <strong>350 TL</strong> (+%40)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- İNGİLİZCE İÇERİK -->
+    <div class="lang-en">
+        <h3 style="text-align: left; margin-bottom: 15px; color: #BEE9E8; border-left: 4px solid #5FA8D3; padding-left: 10px;">Extra Services</h3>
+        
+        <div style="display: flex; gap: 15px;">
+            
+            <!-- Achievements Box (EN) -->
+            <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 18px; border-radius: 12px; text-align: left; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <strong style="color: #5FA8D3; font-size: 1.05rem; display: block; margin-bottom: 10px;">Achievements</strong>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">Need help unlocking Achievements?</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">From TCG to Elemental Specialist, I can cover any category!</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 6px 0;">Pricing ranges from <strong>$1 to $15</strong> depending on your targeted achievements and current account progress.</p>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0;">DM me for a custom estimate!⋆⭒˚.⋆</p>
+            </div>
+
+            <!-- Pulls Box (EN) -->
+            <div style="flex: 1; background: rgba(255, 255, 255, 0.05); padding: 18px; border-radius: 12px; text-align: left; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <strong style="color: #5FA8D3; font-size: 1.05rem; display: block; margin-bottom: 10px;">Pulls / Wish Farming</strong>
+                <p style="font-size: 0.83rem; opacity: 0.88; line-height: 1.5; margin: 0 0 8px 0;">Looking for extra pulls? I can farm wishes directly from your available resources!⋆ ˚｡⋆୨୧˚</p>
+                <ul style="margin: 0; padding-left: 16px; font-size: 0.83rem; opacity: 0.88; line-height: 1.6;">
+                    <li>Standard: <strong>$5</strong> per 10 pulls</li>
+                    <li>Rush Order: <strong>$7</strong> per 10 pulls (+40%)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+    </main>
+
+    <footer>
+        <p>© ACULEATUS Piloting - All rights reserved.</p>
+    </footer>
+
+    <!-- TAB DEĞİŞTİRME SCRIPT'İ -->
+<script>
+function openTab(tabName) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => {
+        content.classList.remove('active');
+        content.style.display = 'none'; // Gizleme garantisi eklendi
+    });
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    const targetTab = document.getElementById(tabName);
+    if (targetTab) {
+        targetTab.classList.add('active');
+        targetTab.style.display = 'block'; // Görünür yapma garantisi eklendi
+    }
+    
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+
+    // Menü sıfırla
+    if (tabName !== 'quests') {
+        let questsContainer = document.getElementById('quests');
+        if (questsContainer) {
+            let subTabsMenu = questsContainer.querySelector('.sub-tabs');
+            let subContents = questsContainer.getElementsByClassName('sub-tab-content');
+            
+            if (subTabsMenu) subTabsMenu.style.display = 'flex';
+            for (let i = 0; i < subContents.length; i++) {
+                subContents[i].style.display = 'none';
+            }
+        }
+    }
+}
+</script>
+<script>
+function openSubTab(evt, subTabName) {
+    let container = evt.currentTarget.closest('.tab-content');
+    
+    // Üstteki buton menüsünü gizle
+    let subTabsMenu = container.querySelector('.sub-tabs');
+    if (subTabsMenu) {
+        subTabsMenu.style.display = "none";
+    }
+    
+    // Tüm alt içerikleri gizle
+    let subContents = container.getElementsByClassName("sub-tab-content");
+    for (let i = 0; i < subContents.length; i++) {
+        subContents[i].style.display = "none";
+    }
+    
+    // Sadece seçileni aç
+    let targetTab = document.getElementById(subTabName);
+    if (targetTab) {
+        targetTab.style.display = "block";
+        
+        // Geri dön tuşu
+        if (!targetTab.querySelector('.back-to-menu-btn')) {
+            let backBtn = document.createElement('button');
+            backBtn.className = 'sub-tab-btn back-to-menu-btn';
+            backBtn.innerHTML = '← back to quests menu';
+            backBtn.style.marginBottom = '20px';
+            backBtn.onclick = function() {
+                targetTab.style.display = "none";
+                subTabsMenu.style.display = "flex"; // Menüyü geri getir
+            };
+            targetTab.prepend(backBtn);
+        }
+    }
+}
+
+function openMainPage(pageId, evt) {
+    // 1. Tüm ana içerik sayfalarını gizle
+    const pages = document.querySelectorAll('.main-page-content');
+    pages.forEach(p => p.style.display = 'none');
+
+    // 2. Butonların/metinlerin aktiflik durumunu temizle
+    const buttons = document.querySelectorAll('.main-page-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+
+    // 3. Seçilen sayfayı göster ve animasyonunu tetikle
+    const targetPage = document.getElementById('page-' + pageId);
+    if (targetPage) {
+        targetPage.style.display = 'block';
+        targetPage.style.animation = 'none';
+        targetPage.offsetHeight; 
+        targetPage.style.animation = 'smoothFadeDown 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+    }
+
+    // 4. Ana fiyat kartını sadece 'three' açıkken göster
+    const mainContainer = document.querySelector('main.card.content-section');
+    if (mainContainer) {
+        if (pageId === 'three') {
+            mainContainer.style.display = 'block';
+            mainContainer.style.animation = 'none';
+            mainContainer.offsetHeight;
+            mainContainer.style.animation = 'smoothFadeDown 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards';
+        } else {
+            mainContainer.style.display = 'none';
+        }
+    }
+
+    if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+    }
+}
+
+function setLanguage(lang, clickedBtn) {
+    if (lang === 'tr') {
+        document.querySelectorAll('.lang-tr').forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+    } else {
+        document.querySelectorAll('.lang-tr').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    clickedBtn.classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
